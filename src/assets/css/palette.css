@@ -1,0 +1,14 @@
+:root {
+  font-size: 62.5%;
+
+  --primary: #000;
+  --on-primary: #fff;
+  --secondary: #71f79f;
+  --on-secondary: #000;
+
+  --glass-background: #f8f8f857;
+  --white-transparent: #ffffffb2;
+
+  --start-gradient: var(--secondary);
+  --end-gradient: #71f3f7;
+}
