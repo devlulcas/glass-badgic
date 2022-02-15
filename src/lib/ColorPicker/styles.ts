@@ -10,6 +10,7 @@ export const Box = styled.div`
 `;
 
 export const Picker = styled(motion.div)`
+  position: absolute;
   width: 3rem;
   height: 3rem;
   border-radius: 50%;

@@ -17,7 +17,7 @@ export const TextInputContainer = styled(motion.div)`
     padding: 1rem;
     border: none;
     border-radius: 1rem;
-    border-bottom: 0.1rem solid var(--secondary) !important;
+    border-bottom: 0.2rem solid var(--secondary) !important;
     width: 100%;
     font-size: 2rem;
     color: var(--on-secondary);

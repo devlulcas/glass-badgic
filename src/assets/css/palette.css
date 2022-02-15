@@ -1,10 +1,11 @@
 :root {
   font-size: 62.5%;
 
-  --primary: #000;
-  --on-primary: #fff;
+  --primary: #dae2ea;
+  --on-primary: #000;
   --secondary: #71f79f;
   --on-secondary: #000;
+  --shadow: #a8cccec7;
 
   --glass-background: #f8f8f857;
   --white-transparent: #ffffffb2;

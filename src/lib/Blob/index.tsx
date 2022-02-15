@@ -27,7 +27,7 @@ const Blob: React.FC<IBlobProps> = ({ initialPosition }) => {
     whileTap: {
       scale: 0.8,
       borderRadius: "20%",
-      rotate: "90deg",
+      rotate: "0deg",
     },
   };
 

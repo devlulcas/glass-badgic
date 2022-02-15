@@ -22,8 +22,8 @@ export const DivFullScreen = styled(motion.div)`
     z-index: 10;
     backdrop-filter: blur(1rem);
     background: var(--glass-background);
-    border: 0.1rem solid var(--on-primary);
+    border: 0.1rem solid var(--white);
     border-radius: 1rem;
-    box-shadow: 0 0.4rem 1rem var(--on-primary);
+    box-shadow: 0 .4rem 2rem 0 var(--shadow);
   }
 `;
