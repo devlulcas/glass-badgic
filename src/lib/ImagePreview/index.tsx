@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
+import useImageColor from "../../hooks/Color";
+import useImageFields from "../../hooks/ImageFields";
 import { Box } from "./styles";
 
 const ImagePreview: React.FC = () => {
+  const { imageColors } = useImageColor();
+  const { imageFields } = useImageFields();
+
   const baseUrl = "https://img.shields.io/static/v1?";
-  const label = "label=js";
-  const labelColor = "&labelColor=00303b";
-  const message = "&message=javascript";
-  const messageColor = "&color=ffce96";
-  const logo = "&logo=javascript";
-  const logoColor = "&logoColor=f1f2da";
+  const label = "label=" + imageFields.label;
+  const labelColor = "&labelColor=" + imageColors.labelColor;
+  const message = "&message=" + imageFields.message;
+  const messageColor = "&color=" + imageColors.messageColor;
+  const logo = "&logo=" + imageFields.logo;
+  const logoColor = "&logoColor=" + imageColors.logoColor;
   const style = "&style=for-the-badge";
 
   const finalUrl =

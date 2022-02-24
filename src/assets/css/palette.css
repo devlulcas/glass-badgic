@@ -1,7 +1,7 @@
 :root {
   font-size: 62.5%;
 
-  --primary: #dae2ea;
+  --primary: #a4bad1;
   --on-primary: #000;
   --secondary: #71f79f;
   --on-secondary: #000;
@@ -12,4 +12,6 @@
 
   --start-gradient: var(--secondary);
   --end-gradient: #71f3f7;
+
+  --typo: "Inter", sans-serif;
 }

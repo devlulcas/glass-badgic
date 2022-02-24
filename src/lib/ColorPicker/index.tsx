@@ -1,31 +1,42 @@
-import React, { useState, MouseEvent, useRef } from "react";
-import { Box, Picker, HueBar } from "./styles";
+import React, { useEffect, useState } from "react";
+import { Box, Label } from "./styles";
+import { HexColorPicker } from "react-colorful";
 
 const ColorPicker: React.FC = () => {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const offsetRef = useRef(null);
-
-  function getMousePosition(event: MouseEvent) {
-    setPosition({
-      x: event.clientX - offsetRef.current.offsetLeft * 2,
-      y: event.clientY - offsetRef.current.offsetTop / 2,
-    });
-
-    console.log(position);
-  }
+  const [hexColorLabel, setHexColorLabel] = useState("#babaca");
+  const [hexColorMessage, setHexColorMessage] = useState("#babaca");
+  const [hexColorIcon, setHexColorIcon] = useState("#babaca");
 
   return (
     <>
-      <Box onClick={getMousePosition}>
-        <Picker
-          ref={offsetRef}
-          style={{ x: position.x + "px", y: position.y + "px" }}
-        ></Picker>
-      </Box>
-      <h1>{position.x + " - " + position.y}</h1>
-      <h1>{window.innerWidth + " - " + window.innerHeight}</h1>
+      <Box>
+        <div>
+          <Label htmlFor="label-color-select">Label</Label>
+          <HexColorPicker
+            id="label-color-select"
+            color={hexColorLabel}
+            onChange={setHexColorLabel}
+          />
+        </div>
 
-      <HueBar type="range"></HueBar>
+        <div>
+          <Label htmlFor="message-color-select">Message color</Label>
+          <HexColorPicker
+            id="message-color-select"
+            color={hexColorMessage}
+            onChange={setHexColorMessage}
+          />
+        </div>
+
+        <div>
+          <Label htmlFor="techlogo-color-select">Tech logo color</Label>
+          <HexColorPicker
+            id="techlogo-color-select"
+            color={hexColorIcon}
+            onChange={setHexColorIcon}
+          />
+        </div>
+      </Box>
     </>
   );
 };

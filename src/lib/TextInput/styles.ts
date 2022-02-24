@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export const TextInputContainer = styled(motion.div)`
   width: 80%;
-  font-family: "Inter", sans-serif;
+  font-family: var(--typo);
 
   label {
     display: block;
