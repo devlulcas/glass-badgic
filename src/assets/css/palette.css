@@ -1,9 +1,18 @@
 :root {
   font-size: 62.5%;
 
-  --primary: #a4bad1;
+  --primary-h: 167;
+  --primary-s: 87%;
+  --primary-l: 85%;
+
+  --secondary-h: 141;
+  --secondary-s: 89%;
+  --secondary-l: 71%;
+
+  --primary: hsl(var(--primary-h), var(--primary-s), var(--primary-l));
   --on-primary: #000;
-  --secondary: #71f79f;
+  --secondary: hsl(var(--primary-h), var(--primary-s), var(--primary-l));
+  --secondary-darker: hsl(var(--primary-h), var(--primary-s), 40%);
   --on-secondary: #000;
   --shadow: #a8cccec7;
 

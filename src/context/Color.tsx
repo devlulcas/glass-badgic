@@ -1,4 +1,4 @@
-import React, { createContext, ReactChild, useState } from "react";
+import React, { createContext, ReactChild, useContext, useState } from "react";
 
 export type ColorStrings = {
   labelColor: string;
@@ -13,7 +13,7 @@ type ColorProviderProps = {
 
 type ColorContextType = {
   imageColors: ColorStrings;
-  saveColors?: (newColors: ColorStrings) => void;
+  saveColors: (newColors: ColorStrings) => void;
 };
 
 const defaultColor: ColorStrings = {
@@ -22,12 +22,12 @@ const defaultColor: ColorStrings = {
   logoColor: "000",
 };
 
-const ColorContext = createContext<ColorContextType>({
-  imageColors: defaultColor,
-});
+const ColorContext = createContext<ColorContextType>({} as ColorContextType);
 
 function ColorProvider({ children, imageColors }: ColorProviderProps) {
-  const [colors, setColors] = useState(imageColors || defaultColor);
+  const [colors, setColors] = useState<ColorStrings>(
+    imageColors || defaultColor,
+  );
 
   function saveColors(newColors: ColorStrings) {
     setColors(newColors);
@@ -40,6 +40,11 @@ function ColorProvider({ children, imageColors }: ColorProviderProps) {
   );
 }
 
-const ColorConsumer = ColorContext.Consumer;
-export { ColorProvider, ColorConsumer };
+// * Podemos retornar o hook no mesmo arquivo também
+const useColors = (): ColorContextType => {
+  const context = useContext(ColorContext);
+  return context;
+};
+
+export { ColorProvider, useColors };
 export default ColorContext;

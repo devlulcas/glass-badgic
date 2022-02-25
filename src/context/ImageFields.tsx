@@ -13,7 +13,7 @@ type ImageFieldsProviderProps = {
 
 type ImageFieldsContextType = {
   imageFields: ImageFields;
-  saveImageFields?: (newImageFields: ImageFields) => void;
+  saveImageFields: (newImageFields: ImageFields) => void;
 };
 
 const defaultImageFields: ImageFields = {
@@ -22,9 +22,9 @@ const defaultImageFields: ImageFields = {
   logo: "TYPESCRIPT",
 };
 
-const ImageFieldsContext = createContext<ImageFieldsContextType>({
-  imageFields: defaultImageFields,
-});
+const ImageFieldsContext = createContext<ImageFieldsContextType>(
+  {} as ImageFieldsContextType,
+);
 
 function ImageFieldsProvider({
   children,

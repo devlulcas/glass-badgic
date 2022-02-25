@@ -7,12 +7,16 @@ export const DivFullScreen = styled(motion.div)`
   height: 100vh;
   place-items: center;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
+
+  @media (min-width: 1680px) {
+    overflow-y: hidden;
+  }
 
   main {
     width: 80%;
     max-width: 60vw;
-    height: 80%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -24,6 +28,10 @@ export const DivFullScreen = styled(motion.div)`
     background: var(--glass-background);
     border: 0.1rem solid var(--white);
     border-radius: 1rem;
-    box-shadow: 0 .4rem 2rem 0 var(--shadow);
+    box-shadow: 0 0.4rem 2rem 0 var(--shadow);
+
+    @media (min-width: 1480px) {
+      height: 80%;
+    }
   }
 `;

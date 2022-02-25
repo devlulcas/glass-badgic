@@ -1,11 +1,13 @@
-import React from "react";
+import React, { HTMLProps } from "react";
 import { TextInputContainer } from "./styles";
 
 interface ITextInputProps {
   name: string;
 }
 
-const TextInput: React.FC<ITextInputProps> = ({ name }) => {
+type Props = ITextInputProps & JSX.IntrinsicElements["input"];
+
+const TextInput: React.FC<Props> = ({ name, onChange }) => {
   const appear = {
     initial: {
       y: 30,
@@ -20,7 +22,7 @@ const TextInput: React.FC<ITextInputProps> = ({ name }) => {
   return (
     <TextInputContainer {...appear}>
       <label htmlFor={name}>{name}</label>
-      <input type="text" id={name} name={name} />
+      <input onChange={onChange} type="text" id={name} name={name} />
     </TextInputContainer>
   );
 };

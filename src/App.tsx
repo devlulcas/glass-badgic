@@ -1,32 +1,35 @@
-import { useState } from "react";
 import Container from "./lib/Container";
-import TextInput from "./lib/TextInput";
 import ImagePreview from "./lib/ImagePreview";
-import ColorPicker from "./lib/ColorPicker";
+import ColorPickers from "./lib/ColorPickers";
+import CopyToClipboard from "./lib/CopyToClipboard";
 import { ColorProvider, ColorStrings } from "./context/Color";
-import { ImageFieldsProvider } from "./context/ImageFields";
+import { ImageFields, ImageFieldsProvider } from "./context/ImageFields";
+import { FlexContainer } from "./lib/GenericStyledComponentes";
+import Inputs from "./lib/Inputs";
+
+const defaultColor: ColorStrings = {
+  labelColor: "fff",
+  messageColor: "0b5ef7",
+  logoColor: "000",
+};
+
+const defaultImageFields: ImageFields = {
+  label: "TYPESCRIPT",
+  message: "REACT",
+  logo: "TYPESCRIPT",
+};
 
 function App() {
-  const defaultColor: ColorStrings = {
-    labelColor: "fff",
-    messageColor: "0b5ef7",
-    logoColor: "000",
-  };
-
-  const defaultImageFields = {
-    label: "TS",
-    message: "REACT",
-    logo: "TYPESCRIPT",
-  };
   return (
     <ColorProvider imageColors={defaultColor}>
       <ImageFieldsProvider imageFields={defaultImageFields}>
         <Container>
-          <TextInput name="Label"></TextInput>
-          <TextInput name="Message"></TextInput>
-          <TextInput name="Tech"></TextInput>
-          <ImagePreview></ImagePreview>
-          <ColorPicker></ColorPicker>
+          <Inputs />
+          <ImagePreview />
+          <FlexContainer>
+            <ColorPickers />
+            <CopyToClipboard />
+          </FlexContainer>
         </Container>
       </ImageFieldsProvider>
     </ColorProvider>
