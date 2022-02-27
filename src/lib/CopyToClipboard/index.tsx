@@ -1,9 +1,9 @@
 import IconButton from "../IconButton";
 import { Container } from "./styles";
 
-import md from "../../assets/images/svgs/markdown.svg";
-import html from "../../assets/images/svgs/html.svg";
-import link from "../../assets/images/svgs/link.svg";
+import md from "../../../public/assets/images/svgs/markdown.svg";
+import html from "../../../public/assets/images/svgs/html.svg";
+import link from "../../../public/assets/images/svgs/link.svg";
 import { useImageUrl } from "../../hooks/ImageUrl";
 import { copyUrl } from "../../utils/CopyToClipboard";
 import useImageFields from "../../hooks/ImageFields";
