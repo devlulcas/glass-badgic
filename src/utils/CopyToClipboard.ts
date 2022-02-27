@@ -8,6 +8,6 @@ export function copyText(text: string) {
 }
 
 export function copyUrl(url: string) {
-  const safeUrl = url.replace(" ", "+");
+  const safeUrl = url.replaceAll(" ", "+");
   copyText(safeUrl);
 }
