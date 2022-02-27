@@ -161,7 +161,7 @@ var Y=Object.defineProperty,D=Object.defineProperties;var J=Object.getOwnPropert
   align-items: center;
   justify-content: center;
   gap: 2rem;
-`;var he="./assets/markdown.e23a3b3f.svg",fe="./assets/html.c1156f27.svg",pe="./assets/link.a1ddaab8.svg";function ve(e){try{navigator.clipboard.writeText(e);const t=document.createElement("textarea")}catch(t){console.log(t)}}function I(e){const t=e.replace(" ","+");ve(t)}const ye=()=>{const{imageUrl:e}=q(),{imageFields:t}=w(),o=e.imageUrl,n=t.logo,a=`<img src="${o}" alt="${n}"/>`,s=`![${n}](${o})`;return c(ge,{children:[r(k,{src:he,alt:"markdown",onClick:()=>I(s),children:"Copy as Markdown image"}),r(k,{src:fe,alt:"html",onClick:()=>I(a),children:"Copy as HTML image"}),r(k,{src:pe,alt:"url",onClick:()=>I(o),children:"Copy as URL"})]})},be=i.div`
+`;var he="/glass-badgic/assets/markdown.e23a3b3f.svg",fe="/glass-badgic/assets/html.c1156f27.svg",pe="/glass-badgic/assets/link.a1ddaab8.svg";function ve(e){try{navigator.clipboard.writeText(e);const t=document.createElement("textarea")}catch(t){console.log(t)}}function I(e){const t=e.replace(" ","+");ve(t)}const ye=()=>{const{imageUrl:e}=q(),{imageFields:t}=w(),o=e.imageUrl,n=t.logo,a=`<img src="${o}" alt="${n}"/>`,s=`![${n}](${o})`;return c(ge,{children:[r(k,{src:he,alt:"markdown",onClick:()=>I(s),children:"Copy as Markdown image"}),r(k,{src:fe,alt:"html",onClick:()=>I(a),children:"Copy as HTML image"}),r(k,{src:pe,alt:"url",onClick:()=>I(o),children:"Copy as URL"})]})},be=i.div`
   display: flex;
   align-items: center;
 
