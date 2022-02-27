@@ -2,8 +2,10 @@
   "name": "badge-generator",
   "version": "0.0.0",
   "scripts": {
+    "clean": "trash dist",
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "npm run clean && tsc && vite build && touch dist/.nojekyll",
+    "deploy": "npm run build && node ./gh-pages.mjs",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -18,6 +20,8 @@
     "@types/react-dom": "^17.0.10",
     "@types/styled-components": "^5.1.22",
     "@vitejs/plugin-react": "^1.0.7",
+    "gh-pages": "^3.2.3",
+    "trash-cli": "^5.0.0",
     "typescript": "^4.4.4",
     "vite": "^2.7.2"
   }
