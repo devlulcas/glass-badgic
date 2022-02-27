@@ -14,8 +14,7 @@ export const DivFullScreen = styled(motion.div)`
   }
 
   main {
-    width: 80%;
-    max-width: 60vw;
+    width: 90%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -27,11 +26,12 @@ export const DivFullScreen = styled(motion.div)`
     backdrop-filter: blur(1rem);
     background: var(--glass-background);
     border: 0.1rem solid var(--white);
-    border-radius: 1rem;
     box-shadow: 0 0.4rem 2rem 0 var(--shadow);
-
+    
     @media (min-width: 1480px) {
+      border-radius: 1rem;
       height: 80%;
+      max-width: 60vw;
     }
   }
 `;
