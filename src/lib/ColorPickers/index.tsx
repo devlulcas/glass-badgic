@@ -30,7 +30,7 @@ const ColorPickers: React.FC = () => {
   return (
     <>
       <Box>
-        <div>
+        <div className="center">
           <Label htmlFor="label-color-select">Label</Label>
           <HexColorPicker color={hexColorLabel} onChange={setHexColorLabel} />
           <HexColorInput
@@ -41,7 +41,7 @@ const ColorPickers: React.FC = () => {
           />
         </div>
 
-        <div>
+        <div className="center">
           <Label htmlFor="message-color-select">Message color</Label>
           <HexColorPicker
             color={hexColorMessage}
@@ -55,7 +55,7 @@ const ColorPickers: React.FC = () => {
           />
         </div>
 
-        <div>
+        <div className="center">
           <Label htmlFor="techlogo-color-select">Tech logo color</Label>
           <HexColorPicker color={hexColorIcon} onChange={setHexColorIcon} />
           <HexColorInput

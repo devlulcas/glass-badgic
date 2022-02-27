@@ -2,35 +2,33 @@ import Container from "./lib/Container";
 import ImagePreview from "./lib/ImagePreview";
 import ColorPickers from "./lib/ColorPickers";
 import CopyToClipboard from "./lib/CopyToClipboard";
-import { ColorProvider, ColorStrings } from "./context/Color";
-import { ImageFields, ImageFieldsProvider } from "./context/ImageFields";
-import { FlexContainer } from "./lib/GenericStyledComponentes";
+import { ColorProvider, defaultColor } from "./context/Color";
+import { defaultImageFields, ImageFieldsProvider } from "./context/ImageFields";
+import { FlexContainer, BlockContainer } from "./lib/GenericStyledComponentes";
 import Inputs from "./lib/Inputs";
-
-const defaultColor: ColorStrings = {
-  labelColor: "fff",
-  messageColor: "0b5ef7",
-  logoColor: "000",
-};
-
-const defaultImageFields: ImageFields = {
-  label: "TYPESCRIPT",
-  message: "REACT",
-  logo: "TYPESCRIPT",
-};
+import StyleOptions from "./lib/StyleOptions";
+import { BadgeStyleProvider, defaultImageStyle } from "./context/BadgeStyle";
+import { ImageUrlProvider, defaultImageUrl } from "./context/ImageUrl";
 
 function App() {
   return (
     <ColorProvider imageColors={defaultColor}>
       <ImageFieldsProvider imageFields={defaultImageFields}>
-        <Container>
-          <Inputs />
-          <ImagePreview />
-          <FlexContainer>
-            <ColorPickers />
-            <CopyToClipboard />
-          </FlexContainer>
-        </Container>
+        <BadgeStyleProvider imageStyle={defaultImageStyle}>
+          <ImageUrlProvider imageUrl={defaultImageUrl}>
+            <Container>
+              <Inputs />
+              <ImagePreview />
+              <FlexContainer>
+                <ColorPickers />
+                <BlockContainer>
+                  <StyleOptions />
+                  <CopyToClipboard />
+                </BlockContainer>
+              </FlexContainer>
+            </Container>
+          </ImageUrlProvider>
+        </BadgeStyleProvider>
       </ImageFieldsProvider>
     </ColorProvider>
   );

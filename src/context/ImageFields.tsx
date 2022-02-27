@@ -16,7 +16,7 @@ type ImageFieldsContextType = {
   saveImageFields: (newImageFields: ImageFields) => void;
 };
 
-const defaultImageFields: ImageFields = {
+export const defaultImageFields: ImageFields = {
   label: "TS",
   message: "REACT",
   logo: "TYPESCRIPT",
@@ -44,6 +44,5 @@ function ImageFieldsProvider({
   );
 }
 
-const ImageFieldsConsumer = ImageFieldsContext.Consumer;
-export { ImageFieldsProvider, ImageFieldsConsumer };
+export { ImageFieldsProvider };
 export default ImageFieldsContext;

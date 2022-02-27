@@ -11,19 +11,19 @@ export const Button = styled.button`
   font-family: var(--typo);
   font-weight: 800;
   font-size: 1.5rem;
-  background: var(--secondary);
+  background: var(--white-transparent);
   color: var(--secondary-darker);
-  box-shadow: 0.1rem 0.1rem 0.4rem;
   cursor: pointer;
   transition: all 200ms ease;
 
-  :active {
-    background: var(--secondary-darker);
-    color: var(--secondary);
+  :hover {
+    filter: contrast(1.3);
   }
 
-  :hover {
-    filter: saturate(125%);
+  :active {
+    background: var(--secondary);
+    color: var(--secondary-darker);
+    filter: contrast(1);
   }
 `;
 

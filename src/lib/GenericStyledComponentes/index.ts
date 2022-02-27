@@ -8,3 +8,7 @@ export const FlexContainer = styled.div`
     flex-direction: column;
   }
 `;
+
+export const BlockContainer = styled.div`
+  display: block;
+`;

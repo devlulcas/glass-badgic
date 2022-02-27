@@ -1,10 +1,9 @@
 import styled from "styled-components";
 
-export const Container = styled.section`
-  margin-block: 1rem;
+export const OptionsContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  gap: 1rem;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  margin-block: 1rem;
 `;

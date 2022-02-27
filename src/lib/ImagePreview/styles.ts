@@ -1,13 +1,19 @@
 import styled from "styled-components";
-import { motion } from "framer-motion";
 
-export const Box = styled(motion.div)`
+export const Box = styled.picture`
+  height: 5%;
   width: 25%;
   margin: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   img {
-    width: 100%;
+    height: 5rem;
   }
+
   @media (max-width: 1480px) {
     width: 79%;
+    height: 15%;
   }
 `;

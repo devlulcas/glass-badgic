@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
 
-export const Box = styled.div`
+export const Box = styled.section`
   --radius: 1.2rem;
   --shadow-prop: 0 0 1.2rem var(--shadow);
   display: flex;
@@ -10,6 +10,13 @@ export const Box = styled.div`
   justify-content: center;
   gap: 4rem;
 
+  .center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
   @media (min-width: 1480px) {
     gap: 1rem;
   }
@@ -17,12 +24,13 @@ export const Box = styled.div`
   /* Custom layout */
   .react-colorful {
     padding: 1rem 1.5rem;
+    width: 95%;
     border-radius: var(--radius) var(--radius) 0 0;
     box-shadow: var(--shadow-prop);
   }
 
   .react-colorful-input {
-    width: 90%;
+    width: 95%;
     font-family: var(--typo);
     background-color: var(--white-transparent);
     padding: 0.4rem;

@@ -16,7 +16,7 @@ type ColorContextType = {
   saveColors: (newColors: ColorStrings) => void;
 };
 
-const defaultColor: ColorStrings = {
+export const defaultColor: ColorStrings = {
   labelColor: "fff",
   messageColor: "0b5ef7",
   logoColor: "000",
@@ -26,7 +26,7 @@ const ColorContext = createContext<ColorContextType>({} as ColorContextType);
 
 function ColorProvider({ children, imageColors }: ColorProviderProps) {
   const [colors, setColors] = useState<ColorStrings>(
-    imageColors || defaultColor,
+    imageColors || defaultColor
   );
 
   function saveColors(newColors: ColorStrings) {
@@ -41,10 +41,10 @@ function ColorProvider({ children, imageColors }: ColorProviderProps) {
 }
 
 // * Podemos retornar o hook no mesmo arquivo também
-const useColors = (): ColorContextType => {
-  const context = useContext(ColorContext);
-  return context;
-};
+// const useColors = (): ColorContextType => {
+//   const context = useContext(ColorContext);
+//   return context;
+// };
 
-export { ColorProvider, useColors };
+export { ColorProvider };
 export default ColorContext;
