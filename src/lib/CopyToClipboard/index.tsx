@@ -5,14 +5,15 @@ import md from "../../../public/assets/images/svgs/markdown.svg";
 import html from "../../../public/assets/images/svgs/html.svg";
 import link from "../../../public/assets/images/svgs/link.svg";
 import { useImageUrl } from "../../hooks/ImageUrl";
-import { copyUrl } from "../../utils/CopyToClipboard";
+import { copyText } from "../../utils/CopyToClipboard";
 import useImageFields from "../../hooks/ImageFields";
+import { safeUrl } from "../../utils/Url";
 
 const CopyToClipboard = () => {
   const { imageUrl } = useImageUrl();
   const { imageFields } = useImageFields();
 
-  const url = imageUrl.imageUrl;
+  const url = safeUrl(imageUrl.imageUrl);
   const alt = imageFields.logo;
 
   const urlAsImage = `<img src="${url}" alt="${alt}"/>`;
@@ -20,15 +21,15 @@ const CopyToClipboard = () => {
 
   return (
     <Container>
-      <IconButton src={md} alt="markdown" onClick={() => copyUrl(urlAsMd)}>
+      <IconButton src={md} alt="markdown" onClick={() => copyText(urlAsMd)}>
         Copy as Markdown image
       </IconButton>
 
-      <IconButton src={html} alt="html" onClick={() => copyUrl(urlAsImage)}>
+      <IconButton src={html} alt="html" onClick={() => copyText(urlAsImage)}>
         Copy as HTML image
       </IconButton>
 
-      <IconButton src={link} alt="url" onClick={() => copyUrl(url)}>
+      <IconButton src={link} alt="url" onClick={() => copyText(url)}>
         Copy as URL
       </IconButton>
     </Container>

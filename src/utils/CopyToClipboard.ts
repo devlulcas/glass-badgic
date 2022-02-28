@@ -6,8 +6,3 @@ export function copyText(text: string) {
     console.log(err);
   }
 }
-
-export function copyUrl(url: string) {
-  const safeUrl = url.replaceAll(" ", "+");
-  copyText(safeUrl);
-}
