@@ -1,9 +1,6 @@
 import IconButton from "../IconButton";
 import { Container } from "./styles";
 
-import md from "../../../public/assets/images/svgs/markdown.svg";
-import html from "../../../public/assets/images/svgs/html.svg";
-import link from "../../../public/assets/images/svgs/link.svg";
 import { useImageUrl } from "../../hooks/ImageUrl";
 import { copyText } from "../../utils/CopyToClipboard";
 import useImageFields from "../../hooks/ImageFields";
@@ -18,18 +15,18 @@ const CopyToClipboard = () => {
 
   const urlAsImage = `<img src="${url}" alt="${alt}"/>`;
   const urlAsMd = `![${alt}](${url})`;
-
+  
   return (
     <Container>
-      <IconButton src={md} alt="markdown" onClick={() => copyText(urlAsMd)}>
+      <IconButton src="assets/images/svgs/markdown.svg" alt="markdown" onClick={() => copyText(urlAsMd)}>
         Copy as Markdown image
       </IconButton>
 
-      <IconButton src={html} alt="html" onClick={() => copyText(urlAsImage)}>
+      <IconButton src="assets/images/svgs/html.svg" alt="html" onClick={() => copyText(urlAsImage)}>
         Copy as HTML image
       </IconButton>
 
-      <IconButton src={link} alt="url" onClick={() => copyText(url)}>
+      <IconButton src="assets/images/svgs/link.svg" alt="url" onClick={() => copyText(url)}>
         Copy as URL
       </IconButton>
     </Container>

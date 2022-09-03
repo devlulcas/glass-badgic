@@ -14,10 +14,13 @@ const IconButton: React.FC<IconButtonProps> = ({
   alt,
   onClick,
 }) => {
+
+  const base = import.meta.env.BASE_URL
+
   return (
     <Button onClick={onClick}>
       {children}
-      <Icon src={src} alt={alt} />
+      <Icon src={src} alt={base + alt} />
     </Button>
   );
 };
