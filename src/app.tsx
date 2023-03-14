@@ -1,7 +1,11 @@
 import { ColorPicker } from "./color-picker";
 import { FormField } from "./form-field";
+import { HTMLIcon, LinkIcon, MarkdownIcon } from "./icons";
+import { useImageStateContext } from "./stores/image";
 
 export function App() {
+  const { getImageStateAsURL } = useImageStateContext();
+
   return (
     <div className="relative min-h-screen min-w-full bg-gradient-to-br from-emerald-300 to-green-400">
       <div className="absolute inset-0 p-2 h-full w-full flex flex-col items-center justify-center">
@@ -10,13 +14,9 @@ export function App() {
           <FormField label="Message" id="message" type="text" />
           <FormField label="Tech" id="tech" type="text" />
 
-          <img
-            className="w-1/4"
-            src="https://img.shields.io/badge/Hello%20World!-green?style=for-the-badge&logo=appveyor"
-            alt="badge"
-          />
+          <img className="w-1/4" src={getImageStateAsURL()} alt="badge" />
 
-          <div className="flex gap-1">
+          <div className="flex gap-4">
             <ColorPicker
               color="#f0f0f0"
               onChange={(color) => console.log(color)}
@@ -43,22 +43,35 @@ export function App() {
 
             <div className="flex flex-col gap-1">
               <div className="flex gap-1">
-                <button>PLASTIC</button>
-                <button>FLAT</button>
-                <button>FLAT SQUARE</button>
-                <button>SQUARE</button>
-                <button>SOCIAL</button>
+                <button className="p-2 bg-emerald-500 text-white rounded-md">
+                  PLASTIC
+                </button>
+                <button className="p-2 bg-emerald-500 text-white rounded-md">
+                  FLAT
+                </button>
+                <button className="p-2 bg-emerald-500 text-white rounded-md">
+                  FLAT SQUARE
+                </button>
+                <button className="p-2 bg-emerald-500 text-white rounded-md">
+                  SQUARE
+                </button>
+                <button className="p-2 bg-emerald-500 text-white rounded-md">
+                  SOCIAL
+                </button>
               </div>
 
-              <button className="py-2 px-4 rounded-md bg-white text-green-500 flex items-center">
+              <button className="flex gap-2 items-center py-2 px-4 rounded-md bg-white text-green-500">
+                <MarkdownIcon width={20} height={20} />
                 Copy as markdown
               </button>
 
-              <button className="py-2 px-4 rounded-md bg-white text-green-500 flex items-center">
+              <button className="flex gap-2 items-center py-2 px-4 rounded-md bg-white text-green-500">
+                <HTMLIcon width={20} height={20} />
                 Copy as HTML Image
               </button>
 
-              <button className="py-2 px-4 rounded-md bg-white text-green-500 flex items-center">
+              <button className="flex gap-2 items-center py-2 px-4 rounded-md bg-white text-green-500">
+                <LinkIcon width={20} height={20} />
                 Copy as URL
               </button>
             </div>

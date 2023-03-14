@@ -17,13 +17,13 @@ export function ColorPicker({
 }: ColorPickerProps) {
   return (
     <div className="flex flex-col gap-1">
-      <label className="text-sm font-semibold text-green-500" htmlFor={id}>
+      <label className="text-sm font-semibold text-emerald-800" htmlFor={id}>
         {label}
       </label>
 
       <HexColorPicker
+        className="min-w-full"
         color={color}
-        className="w-full"
         id={id}
         onChange={onChange}
       />
