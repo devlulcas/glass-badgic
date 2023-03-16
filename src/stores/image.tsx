@@ -31,10 +31,10 @@ const defaultImageState: ImageState = {
     color: "ffffff",
   },
   tech: {
-    text: "Tech",
+    text: "typescript",
     color: "ffffff",
   },
-  format: "flat",
+  format: "for-the-badge",
 };
 
 const imageStateContext = createContext<ImageState & ImageProviderActions>(
@@ -91,7 +91,7 @@ export function ImageStateProvider({ children }: ImageStateProvider) {
       logo: tech.text,
     });
 
-    const url = new URL("https://img.shields.io");
+    const url = new URL("https://img.shields.io/static/v1");
 
     url.search = params.toString();
 

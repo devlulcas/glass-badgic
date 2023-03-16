@@ -4,7 +4,8 @@ import { HTMLIcon, LinkIcon, MarkdownIcon } from "./icons";
 import { useImageStateContext } from "./stores/image";
 
 export function App() {
-  const { getImageStateAsURL } = useImageStateContext();
+  const { getImageStateAsURL, updateMessage } = useImageStateContext();
+
 
   return (
     <div className="relative min-h-screen min-w-full bg-gradient-to-br from-emerald-300 to-green-400">
@@ -15,11 +16,12 @@ export function App() {
           <FormField label="Tech" id="tech" type="text" />
 
           <img className="w-1/4" src={getImageStateAsURL()} alt="badge" />
+          {getImageStateAsURL()}
 
           <div className="flex gap-4">
             <ColorPicker
               color="#f0f0f0"
-              onChange={(color) => console.log(color)}
+              onChange={(color) => updateMessage({ text: "Message", color })}
               label="Label"
               id="label-color"
               name="label-color"
