@@ -82,25 +82,46 @@ export function useImageReducer() {
   return {
     state,
     updateLabelText: (payload: string) => {
-      dispatch({ type: IMAGE_STATE_ACTIONS.UPDATE_LABEL_TEXT, payload });
+      dispatch({
+        type: IMAGE_STATE_ACTIONS.UPDATE_LABEL_TEXT,
+        payload: payload,
+      });
     },
     updateMessageText: (payload: string) => {
-      dispatch({ type: IMAGE_STATE_ACTIONS.UPDATE_MESSAGE_TEXT, payload });
+      dispatch({
+        type: IMAGE_STATE_ACTIONS.UPDATE_MESSAGE_TEXT,
+        payload: payload,
+      });
     },
     updateTechText: (payload: string) => {
-      dispatch({ type: IMAGE_STATE_ACTIONS.UPDATE_TECH_TEXT, payload });
+      dispatch({
+        type: IMAGE_STATE_ACTIONS.UPDATE_TECH_TEXT,
+        payload: payload,
+      });
     },
     updateLabelColor: (payload: string) => {
-      dispatch({ type: IMAGE_STATE_ACTIONS.UPDATE_LABEL_COLOR, payload });
+      dispatch({
+        type: IMAGE_STATE_ACTIONS.UPDATE_LABEL_COLOR,
+        payload: payload,
+      });
     },
     updateMessageColor: (payload: string) => {
-      dispatch({ type: IMAGE_STATE_ACTIONS.UPDATE_MESSAGE_COLOR, payload });
+      dispatch({
+        type: IMAGE_STATE_ACTIONS.UPDATE_MESSAGE_COLOR,
+        payload: payload,
+      });
     },
     updateTechColor: (payload: string) => {
-      dispatch({ type: IMAGE_STATE_ACTIONS.UPDATE_TECH_COLOR, payload });
+      dispatch({
+        type: IMAGE_STATE_ACTIONS.UPDATE_TECH_COLOR,
+        payload: payload,
+      });
     },
     updateFormat: (payload: string) => {
-      dispatch({ type: IMAGE_STATE_ACTIONS.UPDATE_FORMAT, payload });
+      dispatch({
+        type: IMAGE_STATE_ACTIONS.UPDATE_FORMAT,
+        payload: payload,
+      });
     },
   };
 }

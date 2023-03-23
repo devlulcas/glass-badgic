@@ -11,14 +11,14 @@ export function ImageStateProvider({ children }: ImageStateProvider) {
   const { state, ...actions } = useImageReducer();
 
   const getImageStateAsURL = () => {
-    const { label, message, tech, format } = state;
-
     const params = new URLSearchParams({
-      label: label.text,
-      message: message.text,
-      color: message.color,
-      style: format,
-      logo: tech.text,
+      label: state.label.text,
+      labelColor: state.label.color,
+      message: state.message.text,
+      color: state.message.color,
+      style: state.format,
+      logo: state.tech.text,
+      logoColor: state.tech.color,
     });
 
     const url = new URL("https://img.shields.io/static/v1");
@@ -40,3 +40,4 @@ export function ImageStateProvider({ children }: ImageStateProvider) {
     </imageStateContext.Provider>
   );
 }
+

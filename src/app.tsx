@@ -1,4 +1,5 @@
 import { BadgeColorInputGroup } from "./components/badge-color-input-group";
+import { BadgeStylesSelector } from "./components/badge-styles-selector";
 import { BadgeTextInputGroup } from "./components/badge-text-input-group";
 import { ColorPicker } from "./components/color-picker";
 import { HTMLIcon, LinkIcon, MarkdownIcon } from "./components/icons";
@@ -18,23 +19,7 @@ export function App() {
             </div>
 
             <div className="flex flex-col gap-1">
-              <div className="flex gap-1">
-                <button className="p-2 flex-1 bg-emerald-500 text-white rounded-md">
-                  PLASTIC
-                </button>
-                <button className="p-2 flex-1 bg-emerald-500 text-white rounded-md">
-                  FLAT
-                </button>
-                <button className="p-2 flex-1 bg-emerald-500 text-white rounded-md">
-                  FLAT SQUARE
-                </button>
-                <button className="p-2 flex-1 bg-emerald-500 text-white rounded-md">
-                  SQUARE
-                </button>
-                <button className="p-2 bg-emerald-500 text-white rounded-md">
-                  SOCIAL
-                </button>
-              </div>
+              <BadgeStylesSelector/>
 
               <button className="flex gap-2 items-center py-2 px-4 rounded-md bg-white text-green-500">
                 <MarkdownIcon width={20} height={20} />
